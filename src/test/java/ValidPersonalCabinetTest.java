@@ -1,6 +1,4 @@
-import org.testng.Assert;
 import org.testng.annotations.Test;
-import page_objects.CabinetPage;
 import utils.HuskyTestRunner;
 
 import static org.testng.Assert.assertEquals;
@@ -11,8 +9,10 @@ public class ValidPersonalCabinetTest extends HuskyTestRunner {
     @Test
     public void testCabinetPage() {
 
-        homePage
-                .goToPersonalCabinet()
+        cabinetPage = homePage
+                .goToPersonalCabinet();
+
+        cabinetPage
                 .welcomeToPersonalCabinet()
                 .isItYourCabinet();
 

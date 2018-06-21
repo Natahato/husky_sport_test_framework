@@ -1,15 +1,10 @@
 package utils;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import page_objects.CabinetPage;
 import page_objects.HomePage;
-
-import java.util.concurrent.TimeUnit;
 
 import static utils.PropertiesReader.getProperty;
 
@@ -52,5 +47,17 @@ public class HuskyTestRunner {
     public void turnDown() {
         driver.quit();
 
+    }
+
+    public WebDriver getDriver() {
+        return driver;
+    }
+
+    public HomePage getHomePage() {
+        return homePage;
+    }
+
+    public CabinetPage getCabinetPage() {
+        return cabinetPage;
     }
 }
