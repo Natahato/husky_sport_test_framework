@@ -4,12 +4,12 @@
 <suite name="Smoke Suite">
     <test name="Smoke Tests">
         <classes>
-            <!--<class name="InvalidPersonalCabinetTest"/>-->
-            <!--<class name="CheckPriceOfRopeTest"/>-->
+            <class name="InvalidPersonalCabinetTest"/>
+            <class name="CheckPriceOfRopeTest"/>
             <class name="LogoExistTest"/>
-            <!--<class name="RopesOnPageTest"/>-->
-            <!--<class name="TentSearchTest"/>-->
-            <!--<class name="ValidPersonalCabinetTest"/>-->
+            <class name="RopesOnPageTest"/>
+            <class name="TentSearchTest"/>
+            <class name="ValidPersonalCabinetTest"/>
         </classes>
     </test>
 </suite>

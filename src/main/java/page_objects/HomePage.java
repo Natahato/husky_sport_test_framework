@@ -1,10 +1,13 @@
 package page_objects;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import static org.testng.Assert.assertEquals;
+import static utils.Sort.isListElementsOfGlassesEquals;
+import static utils.Sort.sortArrayByTitle;
 
 public class HomePage extends BasedPageObject {
 
@@ -25,7 +28,8 @@ public class HomePage extends BasedPageObject {
     public By tentInBasket = By.xpath("(.//*[@id='block-system-main']//table[@class='table table-bordered']//a)[2]");
     public By enterToClub = By.id("edit-name--3");
     public By buttonOk = By.id("edit-submit--4");
-
+    public By buttonGlasses = By.xpath(".//*[@id='dhtml_menu-5238']/a/div/div");
+    public By glassesList = By.xpath(".//*[@id='block-system-main']//descendant::div[@class='views-row views-row-1 views-row-odd views-row-first']");
 
 
     public HomePage lookingForRope() {
@@ -49,7 +53,7 @@ public class HomePage extends BasedPageObject {
 
     }
 
-    public HomePage lookingForTent (){
+    public HomePage lookingForTent() {
 
         clickOn(buttonTent);
         clickOn(pageNumber);
@@ -59,7 +63,7 @@ public class HomePage extends BasedPageObject {
         return this;
     }
 
-    public String getNameOfTent(){
+    public String getNameOfTent() {
 
         clickOn(shoppingList);
 
@@ -75,15 +79,26 @@ public class HomePage extends BasedPageObject {
     }
 
 
-    public void invalidPersonalNumber (final String pass){
+    public void invalidPersonalNumber(final String pass) {
 
-            fillInput(enterToClub, pass);
-            clickOn(buttonOk);
+        fillInput(enterToClub, pass);
+        clickOn(buttonOk);
     }
 
+//    public Dimension getListOfGlasses (){
+//
+//        clickOn(buttonGlasses);
+//        return findElement(glassesList).getSize();
+//    }
 
+    public boolean getListOfGlasses(final int numberItems) {
 
+        return isListElementsOfGlassesEquals(findElements(glassesList), numberItems);
+
+    }
 }
+
+
 
 
 

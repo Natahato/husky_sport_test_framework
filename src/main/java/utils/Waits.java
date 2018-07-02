@@ -9,6 +9,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.List;
+
 import static java.util.concurrent.TimeUnit.SECONDS;
 
 public class Waits {
@@ -26,6 +28,15 @@ public class Waits {
                 .ignoring(NoSuchElementException.class)
                 .pollingEvery(5, SECONDS)
                 .until(ExpectedConditions.visibilityOfElementLocated(locator));
+    }
+
+    public final List<WebElement> getPresentElements(By locator) {
+
+        return new FluentWait<WebDriver>(driver)
+                .ignoring(NoSuchElementException.class)
+                .pollingEvery(5, SECONDS)
+                .until(ExpectedConditions.visibilityOfElementLocated(locator))
+                .findElements(locator);
     }
 
     public final WebElement getClickableElement(By locator) {

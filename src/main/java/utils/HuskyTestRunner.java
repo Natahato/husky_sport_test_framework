@@ -3,11 +3,13 @@ package utils;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Listeners;
 import page_objects.CabinetPage;
 import page_objects.HomePage;
 
 import static utils.PropertiesReader.getProperty;
 
+@Listeners(Listener.class)
 public class HuskyTestRunner {
 
     protected WebDriver driver;

@@ -5,6 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import utils.Waits;
 
+import java.util.List;
+
 public class BasedPageObject {
 
     WebDriver driver;
@@ -17,6 +19,10 @@ public class BasedPageObject {
 
     public WebElement findElement(final By locator) {
         return wait.getPresentElement(locator);
+    }
+
+    public List<WebElement> findElements(final By locator) {
+        return wait.getPresentElements(locator);
     }
 
 
