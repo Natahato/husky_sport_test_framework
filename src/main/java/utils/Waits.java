@@ -22,7 +22,7 @@ public class Waits {
         this.driver = driver;
     }
 
-    public final WebElement getPresentElement(By locator) {
+    public final Object getPresentElement(By locator) {
 
         return new FluentWait<WebDriver>(driver)
                 .ignoring(NoSuchElementException.class)

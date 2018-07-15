@@ -45,12 +45,8 @@ public class HomePage extends BasedPageObject {
         return driver.findElements(ropesList).size();
     }
 
-    public String priceOfRope() {
-
-        WebElement price = driver.findElement(ropePrice);
-
-        return price.getText();
-
+    public WebElement priceOfRope() {
+        return  driver.findElement(ropePrice);
     }
 
     public HomePage lookingForTent() {
